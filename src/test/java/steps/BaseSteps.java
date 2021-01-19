@@ -6,6 +6,7 @@ import cucumber.api.java.Before;
 import drivers.WebDriverFactory;
 import enums.BrowserType;
 import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -31,6 +32,12 @@ public class BaseSteps {
 
         driver.get(baseUrl);
     }
+    @After
+    public void SetUpAfterEachScenario() {
+        GetDriver().quit();
+    }
+
+
 
     public WebDriver GetDriver() {
 

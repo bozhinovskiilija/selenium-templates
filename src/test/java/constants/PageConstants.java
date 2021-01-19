@@ -4,7 +4,7 @@ public class PageConstants {
 
     public static final String baseUrl = "http://automationpractice.com/index.php";
 
-    public static final String Sprint2Url = "https://www.ultimateqa.com/sample-application-lifecycle-sprint-2/";
+    public static final String ProductSuccessfullyAddedLabel = "Product successfully added to your shopping cart";
 
     public static final String Sprint3Url = "https://www.ultimateqa.com/sample-application-lifecycle-sprint-3/";
 

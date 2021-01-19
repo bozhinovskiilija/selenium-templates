@@ -5,7 +5,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
-import pages.BasePage;
+//import pages.BasePage;
 import pages.LoginPage;
 
 import java.util.logging.Logger;
@@ -23,11 +23,11 @@ public class FirstFeatureSteps {
     }
 
 
-    @Given("Navigate to the Demo site")
-    public void navigateToTheDemoSite() {
-        BasePage.GoTo();
-
-    }
+//    @Given("Navigate to the Demo site")
+//    public void navigateToTheDemoSite() {
+//        BasePage.GoTo();
+//
+//    }
 
     @When("User click the login button")
     public void userClickTheLoginButton() {

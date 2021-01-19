@@ -2,7 +2,7 @@ package constants;
 
 public class UserConstants {
 
-    public static final String Email = "98.asa@gmail.com";
+    public static final String Email = "5659.253@gmail.com";
 
     public static final String Password = "Lozinka12";
 
