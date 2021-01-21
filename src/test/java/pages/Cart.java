@@ -26,9 +26,20 @@ public class Cart {
         return Utils.waitForElementPresence(driver, By.className("ajax_cart_quantity"), 30);
     }
 
+    //find the second dt tag
+    public WebElement getCartProductDelete(int numOfElement) {
+        return Utils.waitToBeClickable(driver, By.xpath("//dt[" + numOfElement + "]//a[@class=\"ajax_cart_block_remove_link\"]"), 30);
+    }
+
     public String CheckProductQuantity(){
         action.moveToElement(getCartTab()).perform();
         return getCartQuantity().getText();
     }
+
+    public void RemoveProductFromCart(){
+        getCartProductDelete(2).click();
+    }
+
+
 
 }

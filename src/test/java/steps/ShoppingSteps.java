@@ -70,12 +70,17 @@ public class ShoppingSteps {
         clothes.addToCardSelectedCasualDress();
     }
 
-    @And("^Check number of product added in the cart is equal to \"([^\"]*)\"$")
+    @And("^The number of product added in the cart is equal to \"([^\"]*)\"$")
     public void checkNumberOfProductAddedInTheCartIsEqualTo(String prodNum) throws Throwable {
         Assert.assertTrue(cart.getCartTab().isDisplayed());
         Assert.assertEquals(prodNum,cart.CheckProductQuantity());
-        Thread.sleep(6000);
+        Thread.sleep(2000);
     }
 
 
+    @When("^I delete one product from the cart$")
+    public void iDeleteOneProductFromTheCart() throws InterruptedException {
+        cart.RemoveProductFromCart();
+        Thread.sleep(3000);
+    }
 }

@@ -13,6 +13,12 @@ Feature: Shopping Workflow
     And Choose one of the casual dresses and click add to cart
     And Modal form for successfully added product is displayed
     Then Click continue shopping button to continue shopping
-    And Check number of product added in the cart is equal to "2"
+    And The number of product added in the cart is equal to "2"
+
+  @Positive @SmokeTest
+  Scenario: Delete product from the cart
+    Given The number of product added in the cart is equal to "2"
+    When I delete one product from the cart
+    Then The number of product added in the cart is equal to "1"
 
 
