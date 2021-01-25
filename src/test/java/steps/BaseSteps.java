@@ -26,10 +26,10 @@ public class BaseSteps {
     }
 
     //After hooks run after the last step of each scenario.
-    @After
-    public void SetUpAfterEachScenario() {
-        GetDriver().quit();
-    }
+//    @After
+//    public void SetUpAfterEachScenario() {
+//        GetDriver().quit();
+//    }
 
     public WebDriver GetDriver() {
 

@@ -21,4 +21,9 @@ Feature: Shopping Workflow
     When I delete one product from the cart
     Then The number of product added in the cart is equal to "1"
 
-
+  @Positive
+  Scenario: Check cart product quantity and price
+    Given The number of product added in the cart is equal to "1"
+    When The price of the product is "$16.40"
+    And Shipping price is "$2.00"
+    Then Total price of the product is "$18.40"

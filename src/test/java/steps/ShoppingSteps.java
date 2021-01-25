@@ -9,24 +9,18 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import pages.Cart;
 import pages.Clothes;
-import pages.CreateAccountPage;
-
 
 public class ShoppingSteps {
-
 
     private WebDriver driver;
     Clothes clothes;
     Cart cart;
-
-
 
     public ShoppingSteps(BaseSteps baseSteps) {
         driver = baseSteps.GetDriver();
         clothes = new Clothes(driver);
         cart=new Cart(driver);
     }
-
 
 
     @When("^User click the dresses button$")
@@ -47,17 +41,14 @@ public class ShoppingSteps {
 
     @And("^Modal form for successfully added product is displayed$")
     public void modalFormForSuccessfullyAddedProductIsDisplayed() throws InterruptedException {
-        Assert.assertEquals("Product successfully added to your shopping cart",clothes.getModalLabelText());
 
-
+        Assert.assertEquals(PageConstants.ProductSuccessfullyAddedLabel,clothes.getModalLabelText());
     }
 
     @Then("^Click continue shopping button to continue shopping$")
     public void clickContinueShoppingButtonToContinueShopping() {
         clothes.ClickOnContinueShoppingButton();
     }
-
-
 
     @And("^From the sub-menu choose casual dresses$")
     public void fromTheSubMenuChooseCasualDresses() {
@@ -77,10 +68,26 @@ public class ShoppingSteps {
         Thread.sleep(2000);
     }
 
-
     @When("^I delete one product from the cart$")
     public void iDeleteOneProductFromTheCart() throws InterruptedException {
         cart.RemoveProductFromCart();
         Thread.sleep(3000);
+    }
+
+    @And("^Total price of the product is \"([^\"]*)\"$")
+    public void totalPriceOfTheProductIs(String totalPrice) {
+
+        Assert.assertEquals(totalPrice,cart.ChechTotalPrice());
+    }
+
+    @When("^The price of the product is \"([^\"]*)\"$")
+    public void thePriceOfTheProductIs(String productPrice) {
+
+        Assert.assertEquals(productPrice,cart.CheckProductPrice());
+    }
+
+    @And("^Shipping price is \"([^\"]*)\"$")
+    public void shippingPriceIs(String expectedShipping) {
+        Assert.assertEquals(expectedShipping,cart.CheckShippingPrice());
     }
 }
